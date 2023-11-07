@@ -16,11 +16,12 @@ class SimpleGui:
         self.root.mainloop()
 
 if __name__ == "__main__":
-	gui = SimpleGui()
-	form = gui.create_frame()
-	form.button(name='name', row=0, column=0)
-	
-	fm = form.show()
-	print(fm)
-	
-	gui.run()
+    gui = SimpleGui()
+    form = gui.create_frame()
+    form.label(name='name', row=0, column=0)
+    form.button(name='name', row=0, column=1)
+    form.button(name='name2', row=1, column=0)
+    form.set_frame(0, 0)
+    fm = form.show()
+    print(fm)
+    gui.run()

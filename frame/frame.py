@@ -7,14 +7,18 @@ class SimpleFrame:
         self.widgets_list = list()
         self.frame = Frame(self.root)
     
-    def add_label(self):
-        self.label = Label()
-        self.widgets_list.append(self.label)
-    
+    def label(self, name, row: int=None, column: int=None):
+        label = SimpleLabel()
+        label.add(self.frame, name=name, row=row, column=column)
+        self.widgets_list.append(label)
+
     def button(self, name, row: int=None, column: int=None):
-        self.button = SimpleButton()
-        self.button.add(self.root, name=name, row=row, column=column)
-        self.widgets_list.append(self.button)
+        button = SimpleButton()
+        button.add(self.frame, name=name, row=row, column=column)
+        self.widgets_list.append(button)
+
+    def set_frame(self, row: int=None, column: int=None):
+        self.frame.grid(row=row, column=column)
 
     def show(self):
         return self.widgets_list
